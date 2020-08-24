@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoEmpresa.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,11 @@ namespace ProjetoEmpresa
         {
             txtCNPJ.ResetText();
             txtNomeEmpresa.ResetText();
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            Consulta consulta = new Consulta(txtCNPJ.Text, txtNomeEmpresa.Text);
         }
     }
 }

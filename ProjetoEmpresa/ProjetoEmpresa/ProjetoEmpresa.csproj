@@ -70,8 +70,16 @@
     <Compile Include="home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\Conexao.cs" />
+    <Compile Include="model\Consulta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultadoConsulta.Designer.cs">
+      <DependentUpon>ResultadoConsulta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdicionarEmpresa.resx">
       <DependentUpon>AdicionarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +101,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResultadoConsulta.resx">
+      <DependentUpon>ResultadoConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,11 +117,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="recursos\imgHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
