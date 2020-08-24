@@ -56,6 +56,7 @@
             this.btnAdicionar.TabIndex = 1;
             this.btnAdicionar.Text = "Adicionar Cadastro";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnBuscar
             // 
@@ -65,6 +66,7 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar Cadastro";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnExcluir
             // 
@@ -74,6 +76,7 @@
             this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir Cadastro";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // label1
             // 

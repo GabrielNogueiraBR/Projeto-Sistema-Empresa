@@ -26,5 +26,25 @@ namespace ProjetoEmpresa
         {
 
         }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            AdicionarEmpresa adicionar = new AdicionarEmpresa();
+            adicionar.Show();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ConsultaEmpresa consulta = new ConsultaEmpresa();
+            consulta.Show();
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            ExcluirEmpresas excluir = new ExcluirEmpresas();
+            excluir.Show();
+
+        }
     }
 }

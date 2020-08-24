@@ -89,6 +89,7 @@
             this.Controls.Add(this.txtCNPJ);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnEnviar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ExcluirEmpresas";
             this.Text = "Excluir Registro";
             this.ResumeLayout(false);
