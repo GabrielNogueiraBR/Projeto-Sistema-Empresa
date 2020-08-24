@@ -16,5 +16,10 @@ namespace ProjetoEmpresa
         {
             InitializeComponent();
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtCNPJ.ResetText();
+        }
     }
 }

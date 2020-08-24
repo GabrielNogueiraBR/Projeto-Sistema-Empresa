@@ -52,10 +52,12 @@
             this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // txtCNPJ
             // 
             this.txtCNPJ.Location = new System.Drawing.Point(154, 50);
+            this.txtCNPJ.MaxLength = 14;
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(202, 20);
             this.txtCNPJ.TabIndex = 10;

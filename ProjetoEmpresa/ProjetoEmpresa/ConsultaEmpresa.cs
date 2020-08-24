@@ -21,5 +21,11 @@ namespace ProjetoEmpresa
         {
 
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtCNPJ.ResetText();
+            txtNomeEmpresa.ResetText();
+        }
     }
 }
