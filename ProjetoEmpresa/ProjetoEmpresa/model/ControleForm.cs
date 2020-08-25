@@ -14,23 +14,23 @@ namespace ProjetoEmpresa.model
 
 
         // Função que realiza a busca das informações no Banco de Dados
-        public void Consulta(String cnpj, String nomeEmpresa)
+        public void Consulta(String cnpj, String razaoSocial)
         {
 
             String mensagem = "Falha na consulta! Informe um CNPJ ou nome de empresa válido.";
                        
             if (!cnpj.Equals("") && !(cnpj == null))
             {
-                
+                Consulta consulta = new Consulta(cnpj, null);
 
                 
                 // Chamada da função que EXIBE o resultado
                 this.ResultadoConsulta(cnpj, "teste", "atividade teste","rua alameda", "110", "bairro", "São Paulo");
             }//caso cnpj não esteja vazio
 
-            else if (!nomeEmpresa.Equals("") && !(nomeEmpresa == null))
+            else if (!razaoSocial.Equals("") && !(razaoSocial == null))
             {
-
+                Consulta consulta = new Consulta(null, razaoSocial);
             }// caso o nome da empresa não esteje vazio
 
             else
