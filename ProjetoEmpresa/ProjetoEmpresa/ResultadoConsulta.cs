@@ -12,9 +12,9 @@ namespace ProjetoEmpresa
 {
     public partial class ResultadoConsulta : Form
     {
-        public ResultadoConsulta()
+        public ResultadoConsulta(String cnpj, String razaoSocial, String atividadePrincipal, String logradouro, String numero, String municipio, String uf)
         {
-            InitializeComponent();
+            InitializeComponent(cnpj, razaoSocial, atividadePrincipal, logradouro, numero, municipio, uf);
         }
     }
 }

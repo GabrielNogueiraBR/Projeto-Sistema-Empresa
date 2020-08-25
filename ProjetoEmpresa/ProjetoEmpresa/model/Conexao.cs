@@ -16,7 +16,7 @@ namespace ProjetoEmpresa.model
         public Conexao()
         {
             // inserindo a cadeia de conexão do banco de dados no método connectionString
-            cn.ConnectionString = "Data Source=DK-NOGUEIRA;Initial Catalog=SistemaCadastroEmpresa;Integrated Security=True";
+            cn.ConnectionString = @"Data Source=DK-NOGUEIRA;Initial Catalog=SistemaCadastroEmpresa;Integrated Security=True";
             
         }
 

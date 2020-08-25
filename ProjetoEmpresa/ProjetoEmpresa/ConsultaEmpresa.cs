@@ -13,6 +13,9 @@ namespace ProjetoEmpresa
 {
     public partial class ConsultaEmpresa : Form
     {
+        // Instância da classe de Controle, que realiza todo o tratamento das interações entre o back-end e a interface.
+        ControleForm control = new ControleForm();
+
         public ConsultaEmpresa()
         {
             InitializeComponent();
@@ -31,7 +34,8 @@ namespace ProjetoEmpresa
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            Consulta consulta = new Consulta(txtCNPJ.Text, txtNomeEmpresa.Text);
+            // Passa para a função consulta os dados necessários para realizar a busca no BD e exibe na tela o resultado da consulta.
+            control.Consulta(txtCNPJ.Text, txtNomeEmpresa.Text);
         }
     }
 }
