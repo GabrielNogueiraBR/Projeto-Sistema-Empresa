@@ -12,6 +12,9 @@ namespace ProjetoEmpresa.model
     // Classe que fará a busca das informações no BD
     class Consulta
     {
+        //objeto Empresa que vai possuir os dados da consulta
+        Empresa empresa = new Empresa();
+
         //conexão com o banco de dados
         Conexao conexao = new Conexao();
         
@@ -22,25 +25,30 @@ namespace ProjetoEmpresa.model
         SqlDataReader leitorBD;
 
         //parâmetro para realizar o SELECT na consulta
-        String paramSql = "";
+        string paramSql = "";
 
-        public Consulta(String cnpj, String razaoSocial)
+        //variavel que vai dizer se houve resultado para a classe controle exibir as informacoes
+        Boolean _temResultado = true;
+
+        public Consulta(string cnpj, string razaoSocial)
         {
-            //definindo se iremos pesquisa pelo nome da empresa ou pelo seu cnpj
+            //definindo se iremos pesquisa pela razao social da empresa ou pelo seu cnpj
             if (cnpj != null)
             {
-                this.paramSql = "CNPJ = " + cnpj;
+                //consulta ao BD
+                query.CommandText = "SELECT * FROM Empresas WHERE CNPJ = @paramSql";
+                this.paramSql = cnpj;
             }
             else
             {
-                this.paramSql = "RazaoSocial = " + razaoSocial;
-            }
-
-            //consulta ao BD
-            query.CommandText = "SELECT * FROM Empresas Where @paramSql";         
+                //consulta ao BD
+                query.CommandText = "SELECT * FROM Empresas WHERE RAZAOSOCIAL = @paramSql";
+                this.paramSql = razaoSocial;
+            }                
 
             //parametros da consulta
-            query.Parameters.AddWithValue("@paramSql", paramSql);
+            query.Parameters.AddWithValue("@paramSql", this.paramSql);
+            
 
             //conexão com o BD
             try
@@ -52,20 +60,56 @@ namespace ProjetoEmpresa.model
                 //execução do comando - Envia o CommandText para o Connection e cria um SqlDataReader.
                 leitorBD = query.ExecuteReader();
 
+                if (leitorBD.HasRows) 
+                {
+                    //gravando os dados
+                    while (leitorBD.Read())
+                    {
+                        empresa.setCNPJ(leitorBD.GetString(0));
+                        empresa.setRazaoSocial(leitorBD.GetString(1));
+                        empresa.setAtividade(leitorBD.GetString(2));
+                        empresa.setLogradouro(leitorBD.GetString(3));
+                        empresa.setNumero(leitorBD.GetString(4));
+                        empresa.setMunicipio(leitorBD.GetString(5));
+                        empresa.setUf(leitorBD.GetString(6));
+
+                    }
+                }//caso a consulta tenha algum retorno
+                else
+                {
+                    _temResultado = false;
+                    MessageBox.Show("Não existe nenhuma empresa com o CNPJ ou Razão Social infomados.\n\n", "Nenhuma empresa identificada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+
                 // desconecta do banco de dados
                 conexao.desconectar();
-
-                //gravando os dados
-                while (leitorBD.Read())
-                {
-                    Console.WriteLine(leitorBD["nome_da_coluna"]);
-
-                }
             }
             catch (SqlException e)
             {
+               _temResultado = false;
                MessageBox.Show("Erro na conexão com o Banco de dados!\n\n" + e, "Erro na consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
+
+        //funcao que retorna os dados da consulta para a classe controle
+        public Empresa retornaDados()
+        {
+            return empresa;
+        }
+
+        //getter de hasResult
+        public Boolean temResultado()
+        {
+            return this._temResultado;
+        }
+
+        //setters de Consulta
+
+
+
+
     }
+
+    
 }

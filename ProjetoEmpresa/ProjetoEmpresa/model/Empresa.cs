@@ -69,7 +69,35 @@ namespace ProjetoEmpresa.model
             return this.uf;
         }
 
-
+        //configurando os setters da classe
+        public void setCNPJ(String cnpj)
+        {
+            this.cnpj = cnpj;
+        }
+        public void setRazaoSocial(String razaoSocial)
+        {
+            this.razaoSocial = razaoSocial;
+        }
+        public void setAtividade(String atividadePrincipal)
+        {
+            this.atividadePrincipal = atividadePrincipal;
+        }
+        public void setLogradouro(String logradouro)
+        {
+            this.logradouro = logradouro;
+        }
+        public void setNumero(String numero)
+        {
+            this.numero = numero;
+        }
+        public void setMunicipio(String municipio)
+        {
+            this.municipio = municipio;
+        }
+        public void setUf(String uf)
+        {
+            this.uf = uf;
+        }
 
     }
 }

@@ -16,22 +16,34 @@ namespace ProjetoEmpresa.model
         // Função que realiza a busca das informações no Banco de Dados
         public void Consulta(String cnpj, String razaoSocial)
         {
-
+            Consulta consulta;
             String mensagem = "Falha na consulta! Informe um CNPJ ou nome de empresa válido.";
-                       
-            if (!cnpj.Equals("") && !(cnpj == null))
+            
+            if (!cnpj.Equals("") && !(cnpj == null) || !razaoSocial.Equals("") && !(razaoSocial == null))
             {
-                Consulta consulta = new Consulta(cnpj, null);
+               
+                if (!cnpj.Equals("") && !(cnpj == null))
+                {
+                    //chamada da consulta
+                    consulta = new Consulta(cnpj, null);
+                } //realiza a pesquisa atraves do cnpj
 
-                
+                else
+                {
+                    consulta = new Consulta(null, razaoSocial);
+
+                } //realiza a pesquisa atraves da razao social
+
+                //retorno dos dados da consulta
+                Empresa empresa = consulta.retornaDados();
+
                 // Chamada da função que EXIBE o resultado
-                this.ResultadoConsulta(cnpj, "teste", "atividade teste","rua alameda", "110", "bairro", "São Paulo");
-            }//caso cnpj não esteja vazio
+                if (consulta.temResultado())
+                    this.ResultadoConsulta(empresa.getCNPJ(), empresa.getRazaoSocial(), empresa.getAtividade(), empresa.getLogradouro(), empresa.getNumero(), empresa.getMunicipio(), empresa.getUf());
 
-            else if (!razaoSocial.Equals("") && !(razaoSocial == null))
-            {
-                Consulta consulta = new Consulta(null, razaoSocial);
-            }// caso o nome da empresa não esteje vazio
+            }
+
+            
 
             else
             {
