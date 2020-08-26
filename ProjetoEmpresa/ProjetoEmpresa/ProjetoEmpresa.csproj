@@ -73,6 +73,7 @@
     <Compile Include="model\Conexao.cs" />
     <Compile Include="model\Consulta.cs" />
     <Compile Include="model\ControleForm.cs" />
+    <Compile Include="model\Empresa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultadoConsulta.cs">
