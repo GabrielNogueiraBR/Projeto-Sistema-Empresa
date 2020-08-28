@@ -46,28 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdicionarEmpresa.cs">
+    <Compile Include="interface\AdicionarEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdicionarEmpresa.Designer.cs">
+    <Compile Include="interface\AdicionarEmpresa.Designer.cs">
       <DependentUpon>AdicionarEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaEmpresa.cs">
+    <Compile Include="interface\ConsultaEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaEmpresa.Designer.cs">
+    <Compile Include="interface\ConsultaEmpresa.Designer.cs">
       <DependentUpon>ConsultaEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExcluirEmpresas.cs">
+    <Compile Include="interface\ExcluirEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExcluirEmpresas.Designer.cs">
+    <Compile Include="interface\ExcluirEmpresas.Designer.cs">
       <DependentUpon>ExcluirEmpresas.cs</DependentUpon>
     </Compile>
-    <Compile Include="home.cs">
+    <Compile Include="interface\home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="home.Designer.cs">
+    <Compile Include="interface\home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Conexao.cs" />
@@ -76,22 +76,22 @@
     <Compile Include="model\Empresa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultadoConsulta.cs">
+    <Compile Include="interface\ResultadoConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResultadoConsulta.Designer.cs">
+    <Compile Include="interface\ResultadoConsulta.Designer.cs">
       <DependentUpon>ResultadoConsulta.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdicionarEmpresa.resx">
+    <EmbeddedResource Include="interface\AdicionarEmpresa.resx">
       <DependentUpon>AdicionarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultaEmpresa.resx">
+    <EmbeddedResource Include="interface\ConsultaEmpresa.resx">
       <DependentUpon>ConsultaEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExcluirEmpresas.resx">
+    <EmbeddedResource Include="interface\ExcluirEmpresas.resx">
       <DependentUpon>ExcluirEmpresas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="home.resx">
+    <EmbeddedResource Include="interface\home.resx">
       <DependentUpon>home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -103,7 +103,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ResultadoConsulta.resx">
+    <EmbeddedResource Include="interface\ResultadoConsulta.resx">
       <DependentUpon>ResultadoConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
