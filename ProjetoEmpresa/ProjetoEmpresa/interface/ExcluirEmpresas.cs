@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoEmpresa.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace ProjetoEmpresa
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtCNPJ.ResetText();
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            // instância do objeto para excluir a empresa informada
+            ExcluirEmpresa excluirEmpresa = new ExcluirEmpresa(txtCNPJ.Text);
         }
     }
 }

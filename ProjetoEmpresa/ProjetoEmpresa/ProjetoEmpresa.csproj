@@ -74,6 +74,7 @@
     <Compile Include="model\Consulta.cs" />
     <Compile Include="model\ControleForm.cs" />
     <Compile Include="model\Empresa.cs" />
+    <Compile Include="model\ExcluirEmpresa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="interface\ResultadoConsulta.cs">

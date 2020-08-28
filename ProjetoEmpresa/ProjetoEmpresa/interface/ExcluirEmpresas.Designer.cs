@@ -80,6 +80,7 @@
             this.btnEnviar.TabIndex = 16;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // ExcluirEmpresas
             // 
