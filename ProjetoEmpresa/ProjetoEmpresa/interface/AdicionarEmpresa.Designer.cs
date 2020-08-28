@@ -143,6 +143,7 @@
             // txtRazaoSocial
             // 
             this.txtRazaoSocial.Location = new System.Drawing.Point(158, 100);
+            this.txtRazaoSocial.MaxLength = 200;
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(202, 20);
             this.txtRazaoSocial.TabIndex = 21;
@@ -150,6 +151,7 @@
             // txtAtividadePrincipal
             // 
             this.txtAtividadePrincipal.Location = new System.Drawing.Point(158, 127);
+            this.txtAtividadePrincipal.MaxLength = 500;
             this.txtAtividadePrincipal.Name = "txtAtividadePrincipal";
             this.txtAtividadePrincipal.Size = new System.Drawing.Size(202, 20);
             this.txtAtividadePrincipal.TabIndex = 22;
@@ -157,6 +159,7 @@
             // txtLogradouro
             // 
             this.txtLogradouro.Location = new System.Drawing.Point(158, 154);
+            this.txtLogradouro.MaxLength = 200;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(202, 20);
             this.txtLogradouro.TabIndex = 23;
@@ -164,6 +167,7 @@
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(158, 181);
+            this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(202, 20);
             this.txtNumero.TabIndex = 24;
@@ -171,6 +175,7 @@
             // txtMunicipio
             // 
             this.txtMunicipio.Location = new System.Drawing.Point(158, 208);
+            this.txtMunicipio.MaxLength = 60;
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Size = new System.Drawing.Size(202, 20);
             this.txtMunicipio.TabIndex = 25;
@@ -178,6 +183,7 @@
             // txtUF
             // 
             this.txtUF.Location = new System.Drawing.Point(158, 235);
+            this.txtUF.MaxLength = 60;
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(202, 20);
             this.txtUF.TabIndex = 26;
