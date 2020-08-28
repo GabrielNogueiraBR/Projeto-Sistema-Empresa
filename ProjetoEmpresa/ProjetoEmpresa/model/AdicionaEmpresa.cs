@@ -29,59 +29,68 @@ namespace ProjetoEmpresa.model
 
         public AdicionaEmpresa(Empresa emp)
         {
-
-            try
+            if (emp.isPreenchida())
             {
-                //referenciando a variavel ao objeto criado na ação de Click do Windows Form
-                this.emp = emp;
-
-                //construindo a query para o SQL
-                query.CommandText = "INSERT INTO Empresas VALUES(" +
-                    "@cnpj," +
-                    "@razaoSocial," +
-                    "@atividadePrinc," +
-                    "@logradouro," +
-                    "@numero," +
-                    "@municipio," +
-                    "@uf)";
-
-                //atribuindo o valor dos parametros
-                query.Parameters.AddWithValue("@cnpj", emp.getCNPJ());
-                query.Parameters.AddWithValue("@razaoSocial", emp.getRazaoSocial());
-                query.Parameters.AddWithValue("@atividadePrinc", emp.getAtividade());
-                query.Parameters.AddWithValue("@logradouro", emp.getLogradouro());
-                query.Parameters.AddWithValue("@numero", emp.getNumero());
-                query.Parameters.AddWithValue("@municipio", emp.getMunicipio());
-                query.Parameters.AddWithValue("@uf", emp.getUf());
-
-                //criando conexao ao BD
-                query.Connection = conexao.conectar();
-
-                //executando o INSERT e gravando as linhas afetadas na variavel
-                rowsAfected = query.ExecuteNonQuery();
-
-                if (rowsAfected > 0)
+                try
                 {
-                    //definindo mensagem
-                    tituloMensagem = "Sucesso na gravação";
-                    mensagem = "Empresa Registrada com sucesso!\n\n";
-                }
-                else
-                {
-                    //definindo mensagem
-                    tituloMensagem = "Erro na gravação";
-                    mensagem = "A empresa não foi registrada com sucesso, por favor tente novamente.\n\n";
-                }
-                MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //referenciando a variavel ao objeto criado na ação de Click do Windows Form
+                    this.emp = emp;
 
+                    //construindo a query para o SQL
+                    query.CommandText = "INSERT INTO Empresas VALUES(" +
+                        "@cnpj," +
+                        "@razaoSocial," +
+                        "@atividadePrinc," +
+                        "@logradouro," +
+                        "@numero," +
+                        "@municipio," +
+                        "@uf)";
+
+                    //atribuindo o valor dos parametros
+                    query.Parameters.AddWithValue("@cnpj", emp.getCNPJ());
+                    query.Parameters.AddWithValue("@razaoSocial", emp.getRazaoSocial());
+                    query.Parameters.AddWithValue("@atividadePrinc", emp.getAtividade());
+                    query.Parameters.AddWithValue("@logradouro", emp.getLogradouro());
+                    query.Parameters.AddWithValue("@numero", emp.getNumero());
+                    query.Parameters.AddWithValue("@municipio", emp.getMunicipio());
+                    query.Parameters.AddWithValue("@uf", emp.getUf());
+
+                    //criando conexao ao BD
+                    query.Connection = conexao.conectar();
+
+                    //executando o INSERT e gravando as linhas afetadas na variavel
+                    rowsAfected = query.ExecuteNonQuery();
+
+                    if (rowsAfected > 0)
+                    {
+                        //definindo mensagem
+                        tituloMensagem = "Sucesso na gravação";
+                        mensagem = "Empresa Registrada com sucesso!\n\n";
+                    }
+                    else
+                    {
+                        //definindo mensagem
+                        tituloMensagem = "Erro na gravação";
+                        mensagem = "A empresa não foi registrada com sucesso, por favor tente novamente.\n\n";
+                    }
+                    MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                }
+                catch (SqlException e)
+                {
+                    // mensagem de exclusao ocorrida com sucesso
+                    mensagem = "Erro na conexão com o Banco de dados!\n\n" + e;
+                    tituloMensagem = "Erro ao se conectar";
+                    MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
-            catch (SqlException e)
+            else
             {
-                // mensagem de exclusao ocorrida com sucesso
-                mensagem = "Erro na conexão com o Banco de dados!\n\n" + e;
-                tituloMensagem = "Erro ao se conectar";
+                tituloMensagem = "Erro!";
+                mensagem = "Valide o preenchimento das informações e tente novamente.";
                 MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+            
         }
 
 
