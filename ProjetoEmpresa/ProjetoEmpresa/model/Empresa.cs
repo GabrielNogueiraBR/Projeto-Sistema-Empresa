@@ -99,5 +99,26 @@ namespace ProjetoEmpresa.model
             this.uf = uf;
         }
 
+
+        //Funcao de Verificacao de preenchimento
+        public Boolean isPreenchida()
+        {
+            if(
+                (this.cnpj.Equals("") || this.cnpj == null) &&
+                (this.razaoSocial.Equals("") || this.razaoSocial == null) &&
+                (this.atividadePrincipal.Equals("") || this.atividadePrincipal == null) &&
+                (this.logradouro.Equals("") || this.logradouro == null) &&
+                (this.numero.Equals("") || this.numero == null) &&
+                (this.municipio.Equals("") || this.municipio == null) &&
+                (this.uf.Equals("") || this.uf == null)
+                )
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
