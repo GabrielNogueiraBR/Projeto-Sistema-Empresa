@@ -70,6 +70,7 @@
     <Compile Include="interface\home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\AdicionaEmpresa.cs" />
     <Compile Include="model\Conexao.cs" />
     <Compile Include="model\Consulta.cs" />
     <Compile Include="model\ControleForm.cs" />

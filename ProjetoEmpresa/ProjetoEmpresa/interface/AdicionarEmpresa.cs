@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoEmpresa.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,24 @@ namespace ProjetoEmpresa
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtCNPJ.ResetText();
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            // Instância do objeto Empresa com o método construtor
+            Empresa empresa = new Empresa(
+                    txtCNPJ.Text.ToUpper(), 
+                    txtRazaoSocial.Text.ToUpper(),
+                    txtAtividadePrincipal.Text.ToUpper(),
+                    txtLogradouro.Text.ToUpper(),
+                    txtNumero.Text.ToUpper(),
+                    txtMunicipio.Text.ToUpper(),
+                    txtUF.Text.ToUpper()
+                );
+
+            AdicionaEmpresa adicionaEmpresa = new AdicionaEmpresa(empresa);
+
+
         }
     }
 }
