@@ -25,6 +25,13 @@ namespace ProjetoEmpresa
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtCNPJ.ResetText();
+            txtRazaoSocial.ResetText();
+            txtAtividadePrincipal.ResetText();
+            txtLogradouro.ResetText();
+            txtNumero.ResetText();
+            txtMunicipio.ResetText();
+            txtUF.ResetText();
+
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
