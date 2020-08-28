@@ -1,4 +1,4 @@
-USE SistemaCadastroEmpresa
+CREATE DATABASE SistemaCadastroEmpresa
 
 CREATE TABLE Empresas
 (
@@ -8,17 +8,9 @@ CREATE TABLE Empresas
 	LOGRADOURO VARCHAR(200),
 	NUMERO VARCHAR(5),
 	MUNICIPIO VARCHAR(60),
-	UF VARCHAR(60)
+	UF VARCHAR(60),
 
-	CONSTRAINT PK_CNPJ PRIMARY KEY (CNPJ)
+	CONSTRAINT PK_CNPJ PRIMARY KEY (CNPJ),
+	CONSTRAINT UNIQUE_RAZAOSOCIAL UNIQUE (RAZAOSOCIAL)
 	
 )
-
-insert into Empresas
-values(	'12345678912345',
-		'Primeira Empresa cadastrada', 
-		'Realizar testes de programação', 
-		'Rua São Paulo', 
-		'115', 
-		'Bairro São Paulo', 
-		'São Paulo')
