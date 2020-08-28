@@ -78,7 +78,7 @@ namespace ProjetoEmpresa.model
                 else
                 {
                     _temResultado = false;
-                    MessageBox.Show("Não existe nenhuma empresa com o CNPJ ou Razão Social infomados.\n\n", "Nenhuma empresa identificada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Não existe nenhuma empresa cadastrada com o CNPJ/Razão Social informado.\n\n", "Nenhuma empresa identificada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
 
 
