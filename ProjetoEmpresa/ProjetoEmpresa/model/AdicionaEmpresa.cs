@@ -61,6 +61,10 @@ namespace ProjetoEmpresa.model
                     //executando o INSERT e gravando as linhas afetadas na variavel
                     rowsAfected = query.ExecuteNonQuery();
 
+                    //desconectando do banco de dados
+                    conexao.desconectar();
+
+                    //verificacao se cadastrou com sucesso
                     if (rowsAfected > 0)
                     {
                         //definindo mensagem
@@ -73,6 +77,8 @@ namespace ProjetoEmpresa.model
                         tituloMensagem = "Erro na gravação";
                         mensagem = "A empresa não foi registrada com sucesso, por favor tente novamente.\n\n";
                     }
+                    
+                    //mensagem final
                     MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                 }
